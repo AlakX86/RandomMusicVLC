@@ -13,13 +13,13 @@ def test_nonexistent_file():
     assert result is None
 
 def test_missing_tracklist():
-    result = xspf_parser('tests\\no_track_list.xspf')
+    result = xspf_parser('tests\\tests_dot_xspf\\no_track_list.xspf')
     assert result is None
 
 def test_missing_location():
-    result = xspf_parser('tests\\no_location.xspf')
+    result = xspf_parser('tests\\tests_dot_xspf\\no_location.xspf')
     assert result is None
 
 def test_well_formed_xspf():
-    result = xspf_parser("tests\\well_formed_xspf.xspf")
+    result = xspf_parser("tests\\tests_dot_xspf\\well_formed_xspf.xspf")
     assert result is None
