@@ -21,7 +21,6 @@ def xspf_parser(file_path):
         for track in track_list.findall('xspf:track', namespace):
             try:
                 location = track.find('xspf:location', namespace).text
-                print(f'Location: {location}')
                 locations.append(location)
             except AttributeError:
                 print("Error: The element 'location' was not found in a track.")
