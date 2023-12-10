@@ -1,12 +1,15 @@
 # RandomMusicVLC
 
+## Aaron Silvoso Garcia 1ºDAM
+
 ## Descripción del Proyecto
 Este proyecto, RandomMusicVLC, está diseñado para proporcionar aleatoriedad al reproducir música. Utiliza una combinación de archivos de lista de reproducción en formato xspf (el mismo que usa VLC cuando exportas una lista), el reproductor multimedia VLC, y una función de aleatorización para ofrecer variedad en la reproducción de tus pistas favoritas.
+
+Es un proyecto de examen para https://github.com/dfleta
 
 ## Cómo instalar
 ### Requisitos
     python3
-
     VLC en el path C:\\Program Files\\VideoLAN\\VLC\\vlc.exe
     
 ### Instalación en Entorno Virtual (Virtualenv)
@@ -23,7 +26,9 @@ Este proyecto, RandomMusicVLC, está diseñado para proporcionar aleatoriedad al
    cd RandomMusicVLC
     ```
     Es muy importante que aquí en la raiz pongas tu .xspf
+
 #### Es probable que no necesites estos 2 ultimos pasos, si unicamente quieres ejecutar el programa, ve a la sección de ejecución, esto es solo es necesario para desarrolladores
+
 3. Instala virtualenv:
 
     ```bash
@@ -63,3 +68,57 @@ Para verificar las dependencias instaladas y asegurarse de que no haya problemas
 $ pip check
 No broken requirements found.
 ```
+## Metodología
+
+El desarrollo de RandomMusicVLC siguió una metodología estructurada en las ramas de develop y main, ademas de una rama release para preparar la version completamente funcional de la aplicacion
+
+### Planteamiento de la Aplicación
+
+La aplicación consta de tres componentes principales:
+1. **Randomizer (`randomicer`)**: Esta función toma una lista de reproducción y la devuelve en un orden aleatorio. *Sé que esta mal escrito*
+2. **VLC Player (`vlc_player`)**: Utiliza el reproductor multimedia VLC para reproducir una lista de ubicaciones de archivos de audio
+3. **XSPF Parser (`xspf_parser`)**: Analiza un archivo en formato xspf para extraer las ubicaciones de los archivos de audio
+
+### Arquitectura de la Aplicación
+
+La arquitectura es modular. La ejecución comienza con el análisis del archivo xspf, seguido de la aleatorización de la lista de reproducción y finalmente la reproducción de los archivos utilizando VLC
+
+### Esquema de Datos
+
+Las ubicaciones de los archivos de audio se almacenan en una lista, que es procesada por los la aplicación main.py
+
+## Pruebas
+
+### Ejecución Correcta
+
+![Se ve la prueba correctamente funcional](working.png)
+
+
+## Coverage
+
+![imagen donde se ve el coverage](Coverage.png)
+
+## Tiempo invertido
+
+![tiempo invertido](tiempo.png)
+
+La primera columna, de las 4 horas, fueron principalmente a ver posibles integraciones de código en mi proyecto, estudiar el parseo de los datos, ver que había que hacer en el proyecto. Básicamente, preparación del proyecto
+
+La segunda columna, de 8 horas,se concentró sobre todo la parte de codigo y hacer los test
+
+Luego se le dedicó 2 horas a la documentación(requirements.txt,readme...)
+
+Y por ultimo, 7 horas de revisión de toda la rubrica y completar partes que no se habían cubierto(como esta), ya sean del código, o de la documentación. Basicamente 7 horas de revisión y mejora del código.
+
+## Diagrama de componentes
+
+![Diagrama de componentes](Diagrama.png)
+
+## Conclusiones
+
+### Posibles Mejoras
+- Modificar la devolución de los errores, quizá mediante su propio error, en vez de con el print
+- Añadir casos test para vlc_player
+### Dificultades
+- Casos test, 
+- Parseo de los datos
