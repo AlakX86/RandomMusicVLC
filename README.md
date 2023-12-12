@@ -11,7 +11,7 @@ Es un proyecto de examen para https://github.com/dfleta
 ### Requisitos
     python3
     VLC en el path C:\\Program Files\\VideoLAN\\VLC\\vlc.exe
-    
+    git
 ### Instalación en Entorno Virtual (Virtualenv)
 
 1. Clona el proyecto:
@@ -25,7 +25,7 @@ Es un proyecto de examen para https://github.com/dfleta
     ```bash
    cd RandomMusicVLC
     ```
-    Es muy importante que aquí en la raiz pongas tu .xspf
+    Es muy importante que aquí en la raiz pongas tu music.xspf
 
 #### Es probable que no necesites estos 2 ultimos pasos, si unicamente quieres ejecutar el programa, ve a la sección de ejecución, esto es solo es necesario para desarrolladores
 
@@ -100,7 +100,7 @@ Las ubicaciones de los archivos de audio se almacenan en una lista, que es proce
 
 ## Tiempo invertido
 
-![tiempo invertido](tiempo.png)
+![tiempo invertido](tiempo.PNG)
 
 La primera columna, de las 4 horas, fueron principalmente a ver posibles integraciones de código en mi proyecto, estudiar el parseo de los datos, ver que había que hacer en el proyecto. Básicamente, preparación del proyecto
 
@@ -119,6 +119,9 @@ Y por ultimo, 7 horas de revisión de toda la rubrica y completar partes que no 
 ### Posibles Mejoras
 - Modificar la devolución de los errores, quizá mediante su propio error, en vez de con el print
 - Añadir casos test para vlc_player
+- No obligar al usuario a usar una lista llamada music.xspf
+- Hacerlo multiplataforma
+- Control de errores en randomicer
 ### Dificultades
-- Casos test, 
+- Casos test, hay casos test en randomicer que podrian considerarse postcondiciones, pero no se muy bien como hacer casos test en randomicer mas allá de 2 casos test, que es la postcondicion de longitud y el test de cuando la lista es < 2, los demas test son para la reutilizacion del codigo y por probar otras entradas, pero sin mucho sentido. En el caso de vlc_player, simplemente no encontré forma simple de hacer casos test
 - Parseo de los datos
